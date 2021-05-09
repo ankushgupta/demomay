@@ -1,0 +1,41 @@
+  153  cd ..
+  154  mkdir test
+  155  ls -l
+  156  cd test
+  157  ls -l
+  158  ls -la
+  159  touch file2
+  160  git add file2
+  161  cd 
+  162  git clone https://github.com/ankushgupta/demomay.git
+  163  ls -l
+  164  cd demomay/
+  165  ls -la
+  166  echo "Hello World" > file1
+  167  git add file1 
+  168  git commit -m "first commit"
+  169  git log
+  170  git config --global user.name "Ankur"
+  171  git config --global user.email "Ankus@example.com"
+  172  git config --list
+  173  vi file1
+  174  git add  file1 
+  175  git commit -m "testing author"
+  176  git log
+  177  git push origin master
+  178  git removte -v
+  179  git remote -v
+  180  git brach
+  181  git branch
+  182  git branch -a
+  183  git checkout -b feature
+  184  git branch 
+  185  git branch -a
+  186  ls -l
+  187  vim file2
+  188  git status
+  189  git add file
+  190  git add file2
+  191  git commit -m "testing branch"
+  192  git push origin feature
+  193  history 
