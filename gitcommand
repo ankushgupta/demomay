@@ -39,3 +39,44 @@
   191  git commit -m "testing branch"
   192  git push origin feature
   193  history 
+    287  git revert 992d47032017de015e705e0d14b6430c737a8bcf
+  288  git log
+  289  cat file5
+  290  git revert eda47f99b75405bf9f880afb613a1b539abba1bd
+  291  ls -l
+  292  git log
+  293  git checkout feature
+  294  git log
+  295  git diff eda47f99b75405bf9f880afb613a1b539abba1bd 1cd5edf563a760dce0a63cf8f266f820aaa05217
+  296  git log
+  297  git reset --hard b1b23b851c76157eb3efb7f7a17c0b4a4c3b53ff
+  298  git log
+  299  git status
+  300  ls -l
+  301  git checkout master
+  302  git status
+  303  git checkout -b dev1
+  304  git checkout master
+  305  git checkout -b dev2
+  306  git checkout dev1
+  307  ls -l
+  308  vi file1
+  309  git add file1
+  310  git commit -m "testing conflict"
+  311  git push origin dev1
+  312  git checkout master
+  313  git merge dev1
+  314  git push origin master
+  315  cat file1
+  316  git checkout dev2
+  317  vim file1
+  318  git add file1
+  319  git commit -m "testing conflicts"
+  320  git push origin dev2
+  321  git checkout master
+  322  git merge dev2
+  323  vim file1
+  324  git add file1
+  325  git commit -m "resolve conflicts"
+  326  git push origin master
+  327  history 
