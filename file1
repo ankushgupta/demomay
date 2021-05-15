@@ -7,5 +7,8 @@ function1()
 function2()
 {
 developer dev1
+function3()
+{
+developer dev2
 }
 
