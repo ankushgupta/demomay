@@ -1,3 +1,25 @@
+      20  docker stop 149e8c89786a   
+   21  docker ps
+   22  docker ps -a
+   23  docker ps
+   24  docer pull ubuntu:16.04
+   25  docker pull ubuntu:16.04
+   26  docker images
+   27  ifconfig
+   28  docker images
+   29  docker run -it -p 80:80 --name apache distracted_zhukovsky /bin/bas
+h
+   30  docker run -it -p 80:80 --name apache aefd7f02ae24    /bin/bash
+   31  docker run -it -d -p 80:80 --name apache aefd7f02ae24    /bin/bash
+   32  docker run -it -d -p 80:80 --name apache1 aefd7f02ae24    /bin/bash
+   33  docker ps
+   34  docker exec -it b13b31bfc145    /bin/bash
+   35  docker ps
+   36  docker commit b13b31bfc145   raviapache
+   37  docker images
+   38  docker run -it -d -p 8080:80 --name apache2 raviapache    /bin/bash
+   39  docker ps
+   40  netstat -tunlp
    41  docker ps
    42  docker exec -it 8491ab865a87    /bin/bash
    43  docker ps
