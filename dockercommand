@@ -1,0 +1,41 @@
+   41  docker ps
+   42  docker exec -it 8491ab865a87    /bin/bash
+   43  docker ps
+   44  docker kill 8491ab865a87   
+   45  docker ps -a
+   46  docker rm 8491ab865a87   
+   47  docker ps -a
+   48  docker images
+   49  docker rmi dd4847278684   
+   50  docker images
+   51  docker  ps
+   52  docker commit b13b31bfc145  demoubuntu
+   53  docker images
+   54  docker login
+   55  docker tag demoubuntu   ankushgupta0727/demoubuntu
+   56  docker images
+   57  docker push ankushgupta0727/demoubuntu
+   58  history 
+   59  docker run -d ubuntu:16.04
+   60  docker ps
+   61  docker ps -a
+   62  docker pull httpd
+   63  docker run -d httpd
+   64  docker ps
+   65  docke rimages
+   66  docker images
+   67  docker run -it ubuntu:16.04 uname
+   68  docker ps
+   69  docekr ps -a
+   70  docker ps -a
+   71  cd /var/lib/docker/
+   72  ls -l
+   73  docker images
+   74  docker tag demoubuntu docker-registyr.wipro.com/demoubuntu 
+   75  docker images
+   76  cd plugins
+   77  ls -l
+   78  docker rmi docker-registyr.wipro.com/demoubuntu 
+   79  docker --help
+   80  docker run --help
+   81  history 
