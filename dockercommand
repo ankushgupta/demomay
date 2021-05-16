@@ -1,4 +1,24 @@
-      20  docker stop 149e8c89786a   
+   root@docker1:~# history 
+    1  docker
+    2  apt-get update
+    3  apt-get install     apt-transport-https     ca-certificates     curl     gnupg     lsb-release
+    4  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    5  echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    6    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    7  apt-get install docker-ce docker-ce-cli containerd.io
+    8  apt-get update
+    9  apt-get install docker-ce docker-ce-cli containerd.io
+   10  docker ps
+   11  docker --version
+   12  docker images
+   13  docker pull ubuntu
+   14  docker pull images
+   15  docker images
+   16  docker run -it -d ubuntu /bin/bash
+   17  docker  ps
+   18  docker exec -it 149e8c89786a   /bin/bash
+   19  docker ps 
+   20  docker stop 149e8c89786a   
    21  docker ps
    22  docker ps -a
    23  docker ps
@@ -7,8 +27,7 @@
    26  docker images
    27  ifconfig
    28  docker images
-   29  docker run -it -p 80:80 --name apache distracted_zhukovsky /bin/bas
-h
+   29  docker run -it -p 80:80 --name apache distracted_zhukovsky /bin/bash
    30  docker run -it -p 80:80 --name apache aefd7f02ae24    /bin/bash
    31  docker run -it -d -p 80:80 --name apache aefd7f02ae24    /bin/bash
    32  docker run -it -d -p 80:80 --name apache1 aefd7f02ae24    /bin/bash
