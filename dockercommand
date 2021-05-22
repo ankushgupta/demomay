@@ -33,6 +33,107 @@
    32  docker run -it -d -p 80:80 --name apache1 aefd7f02ae24    /bin/bash
    33  docker ps
    34  docker exec -it b13b31bfc145    /bin/bash
+   
+
+
+root@ip-172-31-23-239:~# history
+    1  apt-get update
+    2  apt-get install     apt-transport-https     ca-certificates     curl     gnupg     lsb-release
+    3  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    4  echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    5  apt-get update
+    6  sudo apt-get install docker-ce docker-ce-cli containerd.io
+    7  docker ps
+    8  docker pull ubuntu
+    9  mkdir /data
+   10  df -h
+   11  docker run -it -d -v /data:/tmp ubuntu /bin/bash
+   12  docker ps
+   13  cd /data/
+   14  ls -l
+   15  touch 1 2 3 4 5 6 7
+   16  ls -l
+   17  docker exec -it b655 /bin/bash
+   18  ls -l
+   19  docker ps
+   20  docker stop b655; docker rm b655
+   21  docker ps
+   22  ls -l
+   23  docker volume create myvol
+   24  docker volume ls
+   25  docker ps
+   26*
+   27  docker run -it --mount source=myvol,destination=/tmp -d ubuntu
+   28  docker ps
+   29  docker exec -it 4323 /bin/bash
+   30  cd /var/lib/docker/
+   31  ls -l
+   32  cd volumes/
+   33  ls -l
+   34  cd myvol/
+   35  ls -l
+   36  cd _data/
+   37  ls -l
+   38  docker ps
+   39  docker stop 4323; docker rm 4323
+   40  ls -l
+   41  docker run -it --mount source=myvol,destination=/tmp -d ubuntu
+   42  docker info
+   43  docker exec -it 4323 /bin/bash
+   44  docker ps
+   45  docker exec -it 77df  /bin/bash
+   46  ls -l
+   47  docker exec -it 77df  /bin/bash
+   48  cd
+   49  docker run -it --name container1 -d ubuntu
+   50  docker ps
+   51  docker run it --name container2 --link container1 -d ubuntu /bin/bash
+   52  docker run -it --name container2 --link container1 -d ubuntu /bin/bash
+   53  docker ps
+   54  docker exec -it container2 /bin/bash
+   55  docker exec -it container1 /bin/bash
+   56  history
+   57  vim docker-compose.yml
+   58  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   59  chmod +x  /usr/local/bin/docker-compose
+   60  docker-compose up
+   61  vim docker-compose.yml
+   62  docker-compose up
+   63  vim docker-compose.yml
+   64  docker-compose up
+   65  vim docker-compose.yml
+   66  docker-compose up
+   67  docker-compose up -d
+   68  docker ps
+   69  docker-compose down
+   70  vim docker-compose.yml
+   71  docker-compose up -d
+   72  docker pos
+   73  docker ps
+   74  docker exec -it 929284d886ef /bin/bash
+   75  docker exec -it ae837a92994a /bin/bash
+   76  vi docker-compose.yml
+   77  docker-compose down
+   78  docker-compose up -d
+   79  docker ps
+   80  docker exec -it b3d21f2c4b74 /bi/bash
+   81  docker exec -it b3d21f2c4b74 /bin/bash
+   82  vi docker-compose.yml
+   83  docker-compose up -d
+   84  docker ps
+   85  vim docker-compose.yml
+   86  docker network ls
+   87  docker network inspect bridge
+   88  docker network create shiva
+   89  docker network ls
+   90  docker run -it -d --network=shiva ubuntu /bin/bash
+   91  docker exec -it bd0bb /bin/bash
+   92  docker network inspect shiva
+   93  docker network --help
+   94  docker network create --help
+   95  history
+
    35  docker ps
    36  docker commit b13b31bfc145   raviapache
    37  docker images
