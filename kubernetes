@@ -283,7 +283,61 @@ spec:
          servicePort: 80
         path: /foo
 
-  
+  126  kubectl get nodes
+  127  kubectl describe node worker1   
+  128  kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+  129  kubectl get pods -n kube-system
+  130  vim admin.yml
+  131  kubectl create -f admin.yml 
+  132  kubectl edit svc kubernetes-dashboard  -n kube-system
+  133  kubectl get svc -n kube-system
+  134  kubectl get pods -n kube-system -o wide
+  135  kubectl logs kubernetes-dashboard-65ff5d4cc8-tshkj -n kube-system
+  136  kubectl logs kubernetes-dashboard-65ff5d4cc8-tshkj -n kube-system -f
+  137  kubectl get secret -n kube-system
+  138  kubectl -n kube-system describe secret admin-user-token-lmrjd
+  139  kubectl get pods -n demo
+  140  kubectl get deployment -n demo
+  141  kubectl describe deployment httpd -n demo
+  142  kubectl get deployment -n demo
+  143* 
+  144  kubectl get deployment -n demo
+  145  kubectl create -f deployment.yml 
+  146  kubectl get deployment -n demo
+  147  kubectl get node
+  148  kubectl get quota -n demo
+  149  kubectl delete quota mem-cpu-demo
+  150  kubectl delete quota mem-cpu-demo -n demo
+  151  kubectl get deployment -n demo
+  152  kubectl delete -f deployment.yml 
+  153  kubectl get deployment -n demo
+  154  kubectl create -f deployment.yml 
+  155  kubectl get deployment -n demo
+  156  kubectl autoscale --help
+  157  kubectl autoscale deployment nginx --cpu-percent=50 --min=1 --max=10
+  158  kubectl autoscale deployment nginx --cpu-percent=50 --min=1 --max=10 -n demo
+  159  kubectl get hpa
+  160  kubectl get hpa -n demo
+  161  history 
   
     
    
+root@kmaster:~# cat admin.yml 
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system
