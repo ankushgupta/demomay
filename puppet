@@ -66,7 +66,7 @@ node 'puppet-slave.us-central1-a.c.core-period-314514.internal' {
   }
 }
 
-puupet agent 
+puppet agent 
 
 [root@puppet-slave ~]# history 
     1  rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
