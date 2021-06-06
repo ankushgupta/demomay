@@ -112,3 +112,54 @@ ohai				       facter			             setup
 recipe				        manifest		             playbook
 cookbook			        modules			             roles
 thin server thickclient		thick server thin client     serverside
+
+
+
+module name demo
+
+manifest/init.pp
+
+class demo {
+   package {httpd: ensure => latest }
+   service {httpd: ensure => running}
+   file {"/var/www/html/index.html":
+         source => "puppet://$servername/modules/demo/index.html"
+  }
+
+}
+
+
+
+
+class demo {
+   package {httpd: ensure => latest }
+   service {httpd: ensure => running}
+   file {"/var/www/html/index.html":
+         content => template("demo/index.html.erb")
+  }
+
+}
+
+
+class demo {
+   package {httpd: ensure => latest }
+   service {httpd: ensure => running}
+   file {"/etc/httpd/conf/httpd.conf":
+         content => template("demo/httpd.conf.erb")
+  }
+
+}
+
+class demo {
+   $packages = ['httpd','git','telnet','vim']
+
+   package {$packages: ensure => latest }
+   service {httpd: ensure => running}
+   file {"/etc/httpd/conf/httpd.conf":
+         content => template("demo/httpd.conf.erb")
+  }
+  exec{"testing":
+    command => '/bin/echo apache installed on this server > /tmp/status',
+            onlyif =>  '/bin/which httpd1'
+   }
+}
