@@ -1,0 +1,105 @@
+puppet master
+
+1  rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
+    2  yum install puppetserver
+    3  cd /etc/puppetlabs/puppet
+    4  hostame
+    5  hostname
+    6  ping puppet-master
+    7  vi puppet.conf 
+    8  systemctl start puppetserver
+    9  ps -e f | grep -i puppet
+   10  cat puppet.conf 
+   11  /opt/puppetlabs/bin/puppet cert list
+   12  /opt/puppetlabs/bin/puppet cer sign puppet-slave.us-central1-a.c.core-period-314514.internal
+   13  /opt/puppetlabs/bin/puppet cert sign puppet-slave.us-central1-a.c.core-period-314514.internal
+   14  /opt/puppetlabs/bin/puppet cert list
+   15  history 
+   16  cd /etc/puppetlabs/
+   17  ls -l
+   18  cd code/
+   19  ls -l
+   20  cd environments/
+   21  ls -l
+   22  cd production/
+   23  ls -l
+   24  cd manifests/
+   25  ls -l
+   26  vim site.pp
+   27  history 
+   
+[root@puppet-master ~]# cd /etc/puppetlabs/puppet
+[root@puppet-master puppet]# cat puppet.conf 
+# This file can be used to override the default puppet settings.
+# See the following links for more details on what settings are available:
+# - https://puppet.com/docs/puppet/latest/config_important_settings.html
+# - https://puppet.com/docs/puppet/latest/config_about_settings.html
+# - https://puppet.com/docs/puppet/latest/config_file_main.html
+# - https://puppet.com/docs/puppet/latest/configuration.html
+[master]
+vardir = /opt/puppetlabs/server/data/puppetserver
+logdir = /var/log/puppetlabs/puppetserver
+rundir = /var/run/puppetlabs/puppetserver
+pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
+codedir = /etc/puppetlabs/code
+dns_alt_names = puppet-master.us-central1-a.c.core-period-314514.internal, puppet-master
+
+
+[main]
+certname = puppet-master.us-central1-a.c.core-period-314514.internal
+server = puppet-master.us-central1-a.c.core-period-314514.internal
+environment = production
+runinterval = 1h
+
+
+[root@puppet-master manifests]# pwd
+/etc/puppetlabs/code/environments/production/manifests
+[root@puppet-master manifests]# cat site.pp 
+node 'puppet-slave.us-central1-a.c.core-period-314514.internal' {
+  package {'httpd':
+      ensure => "installed",
+  }
+ 
+  service {'httpd':
+   ensure => running,
+   enable => true
+  }
+}
+
+puupet agent 
+
+[root@puppet-slave ~]# history 
+    1  rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
+    2  yum install puppet -y
+    3  cd /etc/puppetlabs/
+    4  cd puppet/
+    5  vi puppet.conf 
+    6  ping puppet-slave
+    7  vi puppet.conf 
+    8  /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+    9  ps -ef| grep - puppet
+   10  ps -ef| grep -i puppet
+   11  /opt/puppetlabs/bin/puppet agent -t
+   12  /opt/puppetlabs/bin/facter 
+   13  /opt/puppetlabs/bin/puppet agent -t
+   14  history 
+   15  /opt/puppetlabs/bin/puppet agent -t
+   16  ps -ef | grep -i httpd
+   17  /opt/puppetlabs/bin/puppet agent -t
+   18  ps -ef | grep -i http
+   19  systemctl stop httpd
+   20  /opt/puppetlabs/bin/puppet agent -t
+   21  history 
+   
+   [root@puppet-slave puppet]# cat puppet.conf 
+# This file can be used to override the default puppet settings.
+# See the following links for more details on what settings are available:
+# - https://puppet.com/docs/puppet/latest/config_important_settings.html
+# - https://puppet.com/docs/puppet/latest/config_about_settings.html
+# - https://puppet.com/docs/puppet/latest/config_file_main.html
+# - https://puppet.com/docs/puppet/latest/configuration.html
+[main] 
+certname = puppet-slave.us-central1-a.c.core-period-314514.internal
+server = puppet-master.us-central1-a.c.core-period-314514.internal
+environment = production
+runinterval = 1h
