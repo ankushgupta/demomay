@@ -103,3 +103,12 @@ certname = puppet-slave.us-central1-a.c.core-period-314514.internal
 server = puppet-master.us-central1-a.c.core-period-314514.internal
 environment = production
 runinterval = 1h
+
+
+chef 				       puppet                        ansible
+pull config			       pull config	                 push config
+agent required			   agent required	  	         agent less
+ohai				       facter			             setup
+recipe				        manifest		             playbook
+cookbook			        modules			             roles
+thin server thickclient		thick server thin client     serverside
