@@ -1,0 +1,106 @@
+     16  ps -ef | grep -i httpd
+   17  ps -ef | grep -i nagios
+   18  systemctl start httpd
+   19  ps -ef | grep -i httpd
+   20  cd /etc/httpd/
+   21  ls -l
+   22  cd conf.d/
+   23  ls -l
+   24  vi nagios.conf 
+   25  cd /etc/nagios/
+   26  ls -l
+   27  cat passwd 
+   28  htpasswd -c /etc/nagios/passwd admin
+   29  cat /etc/nagios/passwd 
+   30  pwd
+   31  cd /etc/httpd/conf.d/
+   32  vim nagios.conf 
+   33  systemctl restart nagios
+   34  systemctl start httpd
+   35  systemctl restart httpd
+   36  ls -l
+   37  vim nagios.conf 
+   38  cd /etc/nagios/
+   39  ls -
+   40  ls -l
+   41  vi cgi.cfg 
+   42  systemctl restart nagios
+   43  vi cgi.cfg 
+   44  systemctl restart nagios
+   45  htpasswd -c /etc/nagios/passwd nagiosadmin
+   46  vi cgi.cfg 
+   47  htpasswd -c /etc/nagios/passwd admin
+   48  free -m
+   49  cd objects/
+   50  vim localhost.cfg 
+   51  cd ..
+   52  nagios -v nagios.cfg 
+   53  vi cgi.cfg 
+   54  systemctl restart nagios
+  55  ls -l
+   56  cd objects/
+   57  ls -l
+   58  vim windows.cfg 
+   59  vim commands.cfg 
+   60  cul -v http://lcoalhost
+   61  curl -v http://localhost
+   62  curl  http://localhost
+   63  curl -I  http://localhost
+   64  curl -I  http://localhost/nagis
+   65  curl -I  http://localhost/nagios
+   66  vim commands.cfg 
+   67  vim localhost.cfg 
+   68  vim commands.cfg 
+   69  ifconfig
+   70  ls -l
+   71  cp localhost.cfg client1.cfg
+   72  vim client1.cfg 
+   73  vim localhost.cfg 
+   74  cd ..
+   75  nagios -v nagios.cfg 
+   76  vim nagios.cfg 
+   77  nagios -v nagios.cfg 
+   78  systemctl restart nagios
+   79  ls -l
+   80  cd objects/
+   81  ls -l
+   82  mkdir dev qa prod
+   83  ls -l
+   84  vim localhost.cfg 
+   85  vim host.cfg
+   86  vim service.cfg
+   87  vim localhost.cfg 
+   88  cd ..
+   89  vim nagios.cfg 
+   90  ls -
+   91  cd objects/
+   92  vim client1.cfg 
+   93  vim templates.cfg 
+   94  vim localhost.cfg 
+   95  history 
+[root@nagiosserver ~]# 
+
+
+[root@nagiosclient ~]# history 
+    1  yum install nagios-plugins nrpe
+    2  cd /etc/nagios/
+    3  vim nrpe.cfg 
+    4  cd /usr/lib64/nagios/plugins/
+    5  ls -l
+    6  yum install nagios-plugins-* nrpe
+    7  ls -l
+    8  ./check_nrpe -H 127.0.0.1 -c check_total_procs
+    9  systemctl start nrpe
+   10  netstat -tunlp
+   11  ./check_nrpe -H 127.0.0.1 -c check_total_procs
+   12  ./check_nrpe -H 127.0.0.1 -c check_load
+   13  ifconfig
+   14  history 
+   15  ./check_nrpe -H 127.0.0.1 -c check_total_procs
+   16  cd
+   17  cd /etc/nagios/
+   18  vim nrpe.cfg 
+   19  ls -l nrpe.cfg 
+   20  echo $?
+   21  history 
+
