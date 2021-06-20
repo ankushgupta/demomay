@@ -1,4 +1,20 @@
-     16  ps -ef | grep -i httpd
+   root@nagiosserver demo1]# history 
+    1  yum install nagios nagios-plugins
+    2  ps -ef | grep -i nagios
+    3  ps -ef | grep -i htpd
+    4  ps -ef | grep -i httpd
+    5  cd /etc/nagios/
+    6  ls -l
+    7  vi nagios.cfg 
+    8  yum install nrpe
+    9  ls -l
+   10  cd objects/
+   11  ls -l
+   12  vim localhost.cfg 
+   13  vim templates.cfg 
+   14  vim localhost.cfg 
+   15  systemctl restart nagios
+   16  ps -ef | grep -i httpd
    17  ps -ef | grep -i nagios
    18  systemctl start httpd
    19  ps -ef | grep -i httpd
