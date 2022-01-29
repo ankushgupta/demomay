@@ -9,7 +9,7 @@ r.com/linux/ubuntu $(lsb_release -cs)  stable"
 o apt-key add -
     7  apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial
   main"
-    8  sudo apt-get install -y kubelet kubeadm kubectl
+    8   apt-get install kubeadm=1.20.0-00 kubelet=1.20.0-00 kubectl -y
     9  kubectl version
    10  kubeadm init --pod-network-cidr=10.244.0.0/16
    11  mkdir -p $HOME/.kube
