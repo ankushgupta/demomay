@@ -124,7 +124,7 @@ metadata:
     monitoring: "true"
 spec:
   replicas: 4 
-    selector:
+  selector:
     matchLabels:
       app: nginx
   template:
